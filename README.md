@@ -1,2 +1,1 @@
-# summer_class
-For our summer class usage
+# Finite Difference Demo for Summer Class at CUGB

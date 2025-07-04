@@ -9,8 +9,10 @@ class Source:
         self.val = np.zeros(my_time.Nt)
         self.pos = None
 
-    def set_position(self):
-        pass
+    def set_position(self, pos: int):
+        self.pos = pos
 
     def set_ricker_wavelet(self, mid, sigma):
-        pass
+        tt = self.t - mid
+        self.val = ( 1 - (tt/sigma)**2 ) * np.exp(-1 * tt**2 / (2 * sigma**2))
+
