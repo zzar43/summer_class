@@ -15,7 +15,7 @@ class Visualize:
         plt.savefig('./data/source.jpg')
 
     @classmethod
-    def save_gif_1d(cls, eq: WaveEq1D, ratio=20):
+    def save_gif_1d(cls, eq, ratio=20):
         fig, ax = plt.subplots()
         x = eq.my_mesh.x_vec
         val = np.max(eq.U)
@@ -28,6 +28,6 @@ class Visualize:
             fig, animate, interval=40, blit=False, save_count=int(eq.my_time.Nt/ratio))
         ani.save("./data/movie.gif")
 
-
-    def save_gif_2d(self, eq: WaveEq2D):
+    @classmethod
+    def save_gif_2d(cls, eq: WaveEq2D):
         print("2d")

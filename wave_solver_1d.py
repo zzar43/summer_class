@@ -26,7 +26,7 @@ def main():
 
     Visualize.plot_source(f)
     Visualize.save_gif_1d(eq)
-    # print(eq.U.shape)
+
 
 if __name__ == "__main__":
 
