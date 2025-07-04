@@ -27,18 +27,21 @@ class WaveEq1D:
 
     def time_update(self, idx: int, f: Source):
         lap = self.diffOp.laplace(self.u1)
-        self.u2.val = 2*self.u1.val - self.u0.val + self.my_mesh.h**2 / self.my_time.tau**2 * lap
-        self.u2.val[self.f.pos] += self.my_time.tau**2 * self.f.val[idx]
+        # lap = np.zeros(self.my_mesh.Nx)
+        self.u2.val = 2*self.u1.val - self.u0.val + self.my_time.tau**2 / self.my_mesh.h**2 * lap
+        # self.u2.val[self.f.pos] += self.my_time.tau**2 * self.f.val[idx]
+        self.u2.val[self.f.pos] += self.f.val[idx]
 
     def time_copy(self):
-        print('maybe an error, need extra copy')
-        self.u0.set_val(self.u1.val)
-        self.u1.set_val(self.u2.val)
+        # print('maybe an error, need extra copy')
+        # self.u0.set_val(np.copy(self.u1.val))
+        # self.u1.set_val(np.copy(self.u2.val))
+        self.u0.val = np.copy(self.u1.val)
+        self.u1.val = np.copy(self.u2.val)
 
     def save_snap(self, idx: int):
         self.U[idx,:] = self.u1.val
 
-            
 
 class WaveEq2D:
 

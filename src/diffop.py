@@ -12,7 +12,6 @@ class DiffOp1D:
         res = np.zeros(u.Nx)
         res[1:-1] = u.val[2:] - 2*u.val[1:-1] + u.val[:-2]
         return res
-        
 
 class DiffOp2D:
 

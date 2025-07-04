@@ -9,7 +9,7 @@ class Source:
         self.val = np.zeros(my_time.Nt)
         self.pos = None
 
-    def set_position(self, pos):
+    def set_position(self, pos: int):
         self.pos = pos
 
     def set_ricker_wavelet(self, mid, sigma):
