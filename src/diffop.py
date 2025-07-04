@@ -7,7 +7,7 @@ class DiffOp1D:
     def __init__(self) -> None:
         pass
 
-    def laplace(self, u: Field1D):
+    def laplace(self, u: Field1D) -> np.ndarray:
         """return value is a np.ndarray."""
         res = np.zeros(u.Nx)
         res[1:-1] = u.val[2:] - 2*u.val[1:-1] + u.val[:-2]

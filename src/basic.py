@@ -7,6 +7,9 @@ class Mesh1D:
         self.Nx = Nx
         self.x_vec = np.linspace(0, (Nx-1)*h, Nx)
 
+    def __str__(self) -> str:
+        return '1D Mesh object with size: {}.'.format(self.Nx)
+
 class Mesh2D:
 
     def __init__(self, h, Nx, Ny):

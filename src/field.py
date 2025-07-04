@@ -8,10 +8,15 @@ class Field1D(Mesh1D):
         super().__init__(h, Nx)
         self.val = np.zeros(Nx)
 
+    def set_val(self, val):
+        self.val = val
+
 class Field2D(Mesh2D):
     
     def __init__(self, h, Nx, Ny):
         super().__init__(h, Nx, Ny)
         self.val = np.zeros((Nx, Ny))
 
+    def set_val(self, val):
+        self.val = val
 
